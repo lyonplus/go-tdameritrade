@@ -14,7 +14,7 @@ import (
 )
 
 const (
-	baseURL = "https://api.tdameritrade.com/v1/"
+	baseURL = "https://api.schwabapi.com/v1/"
 )
 
 // A Client manages communication with the TD-Ameritrade API.

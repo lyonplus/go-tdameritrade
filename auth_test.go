@@ -61,8 +61,8 @@ func TestStartOAuth2ReturnsCorrectURL(t *testing.T) {
 		OAuth2: oauth2.Config{
 			ClientID: "CLIENTID",
 			Endpoint: oauth2.Endpoint{
-				TokenURL: "https://api.tdameritrade.com/v1/oauth2/token",
-				AuthURL:  "https://auth.tdameritrade.com/auth",
+				TokenURL: "https://api.schwabapi.com/v1/oauth2/token",
+				AuthURL:  "https://auth.schwabapi.com/auth",
 			},
 			RedirectURL: "https://localhost:8080/callback",
 		},
@@ -74,7 +74,7 @@ func TestStartOAuth2ReturnsCorrectURL(t *testing.T) {
 		t.Fatalf(err.Error())
 	}
 
-	expectedURL, _ := url.Parse("https://auth.tdameritrade.com/auth?client_id=CLIENTID&redirect_uri=https%3A%2F%2Flocalhost%3A8080%2Fcallback&response_type=code")
+	expectedURL, _ := url.Parse("https://auth.schwabapi.com/auth?client_id=CLIENTID&redirect_uri=https%3A%2F%2Flocalhost%3A8080%2Fcallback&response_type=code")
 	actualURL, _ := url.Parse(u)
 
 	// State query param is different each invocation.
@@ -93,8 +93,8 @@ func TestFinishOAuth2RejectsEmptyState(t *testing.T) {
 		OAuth2: oauth2.Config{
 			ClientID: "CLIENTID",
 			Endpoint: oauth2.Endpoint{
-				TokenURL: "https://api.tdameritrade.com/v1/oauth2/token",
-				AuthURL:  "https://auth.tdameritrade.com/auth",
+				TokenURL: "https://api.schwabapi.com/v1/oauth2/token",
+				AuthURL:  "https://auth.schwabapi.com/auth",
 			},
 			RedirectURL: "https://localhost:8080/callback",
 		},
@@ -123,8 +123,8 @@ func TestFinishOAuth2RejectsInvalidState(t *testing.T) {
 		OAuth2: oauth2.Config{
 			ClientID: "CLIENTID",
 			Endpoint: oauth2.Endpoint{
-				TokenURL: "https://api.tdameritrade.com/v1/oauth2/token",
-				AuthURL:  "https://auth.tdameritrade.com/auth",
+				TokenURL: "https://api.schwabapi.com/v1/oauth/token",
+				AuthURL:  "https://auth.schwabapi.com/auth",
 			},
 			RedirectURL: "https://localhost:8080/callback",
 		},
@@ -153,8 +153,8 @@ func TestFinishOAuth2RejectsEmptyCode(t *testing.T) {
 		OAuth2: oauth2.Config{
 			ClientID: "CLIENTID",
 			Endpoint: oauth2.Endpoint{
-				TokenURL: "https://api.tdameritrade.com/v1/oauth2/token",
-				AuthURL:  "https://auth.tdameritrade.com/auth",
+				TokenURL: "https://api.schwabapi.com/v1/oauth/token",
+				AuthURL:  "https://auth.schwabapi.com/auth",
 			},
 			RedirectURL: "https://localhost:8080/callback",
 		},
