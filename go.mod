@@ -1,4 +1,4 @@
-module github.com/zricethezav/go-tdameritrade
+module github.com/lyonplus/go-tdameritrade
 
 go 1.15
 
